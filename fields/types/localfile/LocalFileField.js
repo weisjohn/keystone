@@ -109,6 +109,15 @@ module.exports = Field.create({
 			);
 		}
 
+		if (this.props.value.url) {
+			values = (
+				<div className="file-values">
+					<FormInput noedit>{this.getFilename()}</FormInput>
+					<img src={this.props.value.url} />
+				</div>
+			);
+		}
+
 		return (
 			<div key={this.props.path + '_details'} className="file-details">
 				{values}
